@@ -1,22 +1,24 @@
 /*
 Author: Odysseus-Abraham Kirikopoulos
 License: GNU General Public License v3.0
-Version: 1.1 beta
+Version: 1.2 beta
 */
 
 #include <iostream>
 
 int main() {
 
-    int party_a = 0;
-    int party_b = 0;
-    int party_c = 0;
-    int ttl_votes = 0;
+    double party_a = 0.0;
+    double party_b = 0.0;
+    double party_c = 0.0;
+    double ttl_votes = 0.0;
     char authentication[] = "null";
     int option = 10;
     bool authentic_copy = false;
+    double party_a_percentage = 0.0;
+    double party_b_percentage = 0.0;
+    double party_c_percentage = 0.0;
 
-    std::cout << "Launching\n";
     std::cout << "Author: Odysseus-Abraham Kirikopoulos\n";
     std::cout << "License: GNU General Public License v3.0\n";
     std::cout << "Build Version: 1.1 beta\n";
@@ -31,16 +33,16 @@ int main() {
         std::cin >> option;
 
         if (option == 1) {
-        party_a += 1;
-        ttl_votes += 1;
+        party_a += 1.0;
+        ttl_votes += 1.0;
         std::cout << ("\nYour vote has been registered\n");
         } else if (option == 2) {
-        party_b += 1;
-        ttl_votes += 1;
+        party_b += 1.0;
+        ttl_votes += 1.0;
         std::cout << ("\nYour vote has been registered\n");
         } else if (option == 3) {
-        party_c += 1;
-        ttl_votes += 1;
+        party_c += 1.0;
+        ttl_votes += 1.0;
         std::cout << ("\nYour vote has been registered\n");
         } else if (option == 0) {
             option = 0;
@@ -49,9 +51,13 @@ int main() {
         }
     }
 
-    std::cout << "\nParty A has: " << party_a << " votes.\n";
-    std::cout << "Party B has: " << party_b << " votes.\n";
-    std::cout << "Party C has: " << party_c << " votes.\n";
+    party_a_percentage = (party_a / ttl_votes) * 100.0;
+    party_b_percentage = (party_b / ttl_votes) * 100.0;
+    party_c_percentage = (party_c / ttl_votes) * 100.0;
+
+    std::cout << "\nParty A has: " << party_a << " votes and " << party_a_percentage << "%.\n";
+    std::cout << "Party B has: " << party_b << " votes and " << party_b_percentage << "%.\n";
+    std::cout << "Party C has: " << party_c << " votes and " << party_c_percentage << "%.\n";
 
     if (party_a > party_b && party_a > party_c) {
         std::cout << "\nParty A has the most votes";
