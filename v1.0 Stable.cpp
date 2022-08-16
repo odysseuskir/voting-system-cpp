@@ -1,7 +1,7 @@
-/*
+-/*
 Author: Odysseus-Abraham Kirikopoulos
 License: GNU General Public License v3.0
-Version: 1.2 beta
+Version: 1.0 Stable
 */
 
 #include <iostream>
@@ -21,7 +21,7 @@ int main() {
 
     std::cout << "Author: Odysseus-Abraham Kirikopoulos\n";
     std::cout << "License: GNU General Public License v3.0\n";
-    std::cout << "Build Version: 1.1 beta\n";
+    std::cout << "Build Version: 1.0 Stable\n";
 
     std::cout << "Welcome to the Voting System";
 
@@ -47,23 +47,31 @@ int main() {
         } else if (option == 0) {
             option = 0;
         } else {
-        std::cout << ("Error: Unknown party");
+        std::cout << ("\n\nError: Unknown party\n\n");
         }
     }
 
-    party_a_percentage = (party_a / ttl_votes) * 100.0;
-    party_b_percentage = (party_b / ttl_votes) * 100.0;
-    party_c_percentage = (party_c / ttl_votes) * 100.0;
+    if (party_a == 0 && party_b == 0 && party_c == 0) {
+        party_a_percentage = 0;
+        party_b_percentage = 0;
+        party_c_percentage = 0;
+    } else {
+        party_a_percentage = (party_a / ttl_votes) * 100.0;
+        party_b_percentage = (party_b / ttl_votes) * 100.0;
+        party_c_percentage = (party_c / ttl_votes) * 100.0;
+    }
 
     std::cout << "\nParty A has: " << party_a << " votes and " << party_a_percentage << "%.\n";
     std::cout << "Party B has: " << party_b << " votes and " << party_b_percentage << "%.\n";
     std::cout << "Party C has: " << party_c << " votes and " << party_c_percentage << "%.\n";
 
     if (party_a > party_b && party_a > party_c) {
-        std::cout << "\nParty A has the most votes";
+        std::cout << "\nParty A has the most votes\n";
     } else if (party_b > party_a && party_b > party_c) {
-        std::cout << "\nParty B has the most votes";
+        std::cout << "\nParty B has the most votes\n";
     } else if (party_c > party_a && party_c > party_b) {
-        std::cout << "\nParty C has the most votes";
+        std::cout << "\nParty C has the most votes\n";
+    } else {
+        std::cout << "\nAll parties have equal votes\n";
     }
 }
