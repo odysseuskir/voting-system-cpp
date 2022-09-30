@@ -5,7 +5,7 @@ Version: 1.1 Stable
 
 #include <iostream>
 
-void main() {
+int main() {
 
     // Declare variables
     double party_a = 0.0;
@@ -88,4 +88,7 @@ void main() {
     } else {
         std::cout << "\nAll parties have equal votes\n";
     }
+
+    return 0;
+
 }
